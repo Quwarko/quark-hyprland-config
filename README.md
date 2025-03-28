@@ -12,3 +12,5 @@ My config for Hyprland apps
      cd
    b. Copy your wallpaper to /home/aptivace/Wallpapers/ :
      sudo cp <YOUR PICTURE>.png /home/aptivace/Wallpapers/kavo.png
+4. Keybinds:
+   Look in hypr/hyprland.conf
