@@ -1,0 +1,103 @@
+{
+  "position": "top",
+    "margin-top" : 2,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height" : 28,
+    "modules-left": [
+      "custom/menu",
+      "hyprland/workspaces",
+      "temperature",
+      "memory",
+      "cpu",
+    ],
+    "modules-center": [
+      "clock",
+    ],
+    "modules-right": [
+    "pulseaudio",
+    "network",
+    "battery",
+    "custom/wlogout",
+    ],
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": "",
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "*": 4, // 5 workspaces by default on every monitor
+        "HDMI-A-1": 3 // but only three on HDMI-A-1
+      },
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "tooltip": false,
+      "on-click": "kitty btop"
+    },
+    "memory": {
+      "format": " {used}GiB",
+      "tooltip": false,
+      "on-click": "kitty btop"
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", ""],
+      "tooltip": false
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-full": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": ["", "", "", "", ""],
+      "tooltip": false
+    },
+    "network": {
+      "format-wifi": " {signalStrength}%",
+      "format-ethernet": "{cidr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": "",
+      "tooltip": false,
+      "on-click": "kitty nmtui"
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon}",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/menu": {
+      "format": "  ",
+      "on-click": "wofi --show drun",
+      "tooltip": false
+    },
+    "custom/wlogout": {
+      "format": "  ",
+      "on-click": "wlogout",
+      "tooltip": false
+    },
+}
